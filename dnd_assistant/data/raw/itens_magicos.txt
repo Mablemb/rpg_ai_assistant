@@ -1,0 +1,9 @@
+Lâmina da Aurora: A espada mágica da Rainha Elara. Brilha com uma luz dourada e é capaz de cortar qualquer material. Dizem que foi forjada pelos deuses.
+
+Amuleto da Proteção: Um pingente que protege o usuário contra magia negra e maldições. Brilha fracamente quando detecta perigo.
+
+Anel do Teletransporte: Um anel que permite ao usuário se teletransportar para um local que já visitou antes. Tem um limite de usos diários.
+
+Botas da Velocidade: Um par de botas que permite ao usuário correr a velocidades incríveis.
+
+Poção da Cura: Uma poção que cura instantaneamente ferimentos e doenças. Tem um gosto amargo, mas é muito eficaz.
