@@ -116,4 +116,19 @@ def main():
             if "sources" in response and response["sources"]:
                 print("Sources:", ", ".join(response["sources"]))
         
-        print("\n
+        print("\nSETUP COMPLETED SUCCESSFULLY!")
+        print("="*70)
+        print("You can now use the D&D Campaign Assistant!")
+        print("Next steps:")
+        print("1. Edit the campaign files in data/raw/ with your own content")
+        print("2. Run process_data.py and create_embeddings.py again if you make changes")
+        print("3. Implement the XAI components in the explainer directory")
+        print("4. Create a main app.py to integrate everything")
+        print("="*70)
+        
+    except Exception as e:
+        print(f"\nError during testing: {str(e)}")
+        print("Setup completed with warnings. Some components may not work correctly.")
+
+if __name__ == "__main__":
+    main()
