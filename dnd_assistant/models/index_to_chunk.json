@@ -1,0 +1,26 @@
+{
+  "0": {
+    "text": "Lâmina da Aurora: A espada mágica da Rainha Elara. Brilha com uma luz dourada e é capaz de cortar qualquer material. Dizem que foi forjada pelos deuses. Amuleto da Proteção: Um pingente que protege o usuário contra magia negra e maldições. Brilha fracamente quando detecta perigo. Anel do Teletransporte: Um anel que permite ao usuário se teletransportar para um local que já visitou antes. Tem um limite de usos diários. Botas da Velocidade: Um par de botas que permite ao usuário correr a velocidades incríveis. Poção da Cura: Uma poção que cura instantaneamente ferimentos e doenças. Tem um gosto amargo, mas é muito eficaz.",
+    "source": "itens_magicos.txt"
+  },
+  "1": {
+    "text": "Goblins: Pequenas criaturas verdes que vivem em cavernas e florestas. São covardes, mas perigosos em grandes números. Orcs: Guerreiros brutais e selvagens, maiores e mais fortes que os goblins. Geralmente vivem em tribos e são conhecidos por sua ferocidade em batalha. Trolls: Criaturas grandes e grotescas, com grande capacidade de regeneração. São vulneráveis ao fogo. Dragão Ancião: Uma criatura lendária, imensamente poderosa e inteligente. Possui escamas impenetráveis e cospe fogo. Dizem que guarda tesouros inimagináveis. Espíritos da Floresta: Seres etéreos que protegem a Floresta Sombria. Podem ser benevolentes ou malévolos, dependendo de como são tratados.",
+    "source": "monstros.txt"
+  },
+  "2": {
+    "text": "Rainha Elara: A justa e sábia governante de Eldoria. Uma elfa de cabelos prateados e olhos azuis penetrantes. Possui uma espada mágica chamada \"Lâmina da Aurora\". Mestre Ferreiro Torvin: Um anão rabugento, mas extremamente talentoso. É conhecido por forjar armas e armaduras de qualidade incomparável. Sua oficina fica em Valoria. Velha Maga Elara: Uma humana enigmática, conhecida por usar a alcunha da rainha, vive isolada em uma cabana na Floresta Sombria. Dizem que ela possui conhecimento de magias antigas e pode prever o futuro. Tem uma ligação misteriosa ao Reino. Capitão Ragnor: Um pirata temido (e secretamente respeitado) que comanda o navio \"Serpente do Mar\". Ele é conhecido por sua astúcia e habilidade com espadas. Grom, o Bárbaro: Um guerreiro imponente das Montanhas Uivantes. Ele é conhecido por sua força bruta e lealdade aos seus companheiros.",
+    "source": "npcs.txt"
+  },
+  "3": {
+    "text": "Reino de Eldoria: Um reino outrora próspero, agora em reconstrução após a Guerra das Sombras. É governado pela Rainha Elara, conhecida por sua sabedoria e justiça. A capital é Valoria, uma cidade cercada por muralhas e com um grande castelo central. Floresta Sombria: Uma floresta densa e misteriosa, lar de criaturas mágicas e perigosas. Dizem que no coração da floresta reside um antigo espírito guardião. É evitada pela maioria dos viajantes, exceto os mais corajosos (ou tolos). Montanhas Uivantes: Uma cadeia de montanhas altas e escarpadas, onde o vento uiva constantemente. Habitada por tribos de bárbaros e criaturas resistentes ao frio, como yetis. Há rumores de minas abandonadas com riquezas esquecidas. Costa Esmeralda: Uma região costeira com praias de areia branca, águas cristalinas e recifes de coral. Lar de comunidades pesqueiras e piratas ocasionais. O Porto Âmbar é o principal centro comercial da região",
+    "source": "regioes.txt"
+  },
+  "4": {
+    "text": ". Lar de comunidades pesqueiras e piratas ocasionais. O Porto Âmbar é o principal centro comercial da região. Deserto das Almas Perdidas: Uma vasta extensão de areia e rochas, onde o calor é implacável. Diz a lenda que é habitado por espíritos inquietos e criaturas que se adaptaram às condições extremas. Poucos se aventuram neste deserto.",
+    "source": "regioes.txt"
+  },
+  "5": {
+    "text": "Inspiração Heroica: Cada jogador começa a sessão com um ponto de Inspiração Heroica. Ele pode gastar esse ponto para rolar um dado adicional (d6) em qualquer teste e somar ao resultado. Magia Selvagem: Quando um conjurador falha em um teste de conjuração por 5 ou mais, ele rola na tabela de Magia Selvagem (crie uma tabela com efeitos aleatórios, bons e ruins). Crítico Brutal: Quando um ataque resulta em um acerto crítico (20 natural), o dano é maximizado antes de ser multiplicado. Exemplo: Um ataque com uma espada longa (1d8) causa 8 + modificador de Força, e então o total é dobrado. Exaustão Prolongada: Se um personagem atingir 5 níveis de exaustão, ele não morre imediatamente, mas entra em um estado de coma mágico até ser curado por magia poderosa. Bênção da Natureza: Se o personagem passar um dia inteiro em área de natureza selvagem e não realizar nenhuma atividade desgastante, ele recupera todos os seus pontos de vida.",
+    "source": "regras_homebrew.txt"
+  }
+}

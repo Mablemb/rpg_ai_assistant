@@ -1,0 +1,4 @@
+Inspiração Heroica: Cada jogador começa a sessão com um ponto de Inspiração Heroica. Ele pode gastar esse ponto para rolar um dado adicional (d6) em qualquer teste e somar ao resultado. Magia Selvagem: Quando um conjurador falha em um teste de conjuração por 5 ou mais, ele rola na tabela de Magia Selvagem (crie uma tabela com efeitos aleatórios, bons e ruins). Crítico Brutal: Quando um ataque resulta em um acerto crítico (20 natural), o dano é maximizado antes de ser multiplicado. Exemplo: Um ataque com uma espada longa (1d8) causa 8 + modificador de Força, e então o total é dobrado. Exaustão Prolongada: Se um personagem atingir 5 níveis de exaustão, ele não morre imediatamente, mas entra em um estado de coma mágico até ser curado por magia poderosa. Bênção da Natureza: Se o personagem passar um dia inteiro em área de natureza selvagem e não realizar nenhuma atividade desgastante, ele recupera todos os seus pontos de vida.
+
+---
+
