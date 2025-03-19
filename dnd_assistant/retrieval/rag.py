@@ -31,7 +31,7 @@ class CampaignRetriever:
         
         # Load the embedding model
         print("Loading embedding model...")
-        self.embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
+        self.embedding_model = SentenceTransformer("pierreguillou/gpt2-small-portuguese")
         
         # Load FAISS index
         print("Loading FAISS index...")
@@ -61,6 +61,10 @@ class CampaignRetriever:
         """
         # Generate embedding for the query
         query_embedding = self.embedding_model.encode([query])[0].reshape(1, -1).astype('float32')
+
+        # Print the dimensionality of the query embedding and the FAISS index
+        print(f"Query embedding dimensionality: {query_embedding.shape[1]}")
+        print(f"FAISS index dimensionality: {self.index.d}")
         
         # Search the FAISS index
         scores, indices = self.index.search(query_embedding, self.top_k)
@@ -105,17 +109,23 @@ class CampaignAssistant:
         
         # Initialize text generation model - using a small model that can run locally
         print("Loading text generation model... (this might take a moment)")
+        # Inicializar com modelo português, se disponível
         try:
             self.generator = pipeline(
                 "text-generation",
-                model="gpt2",  # Using a simple model; you can use more powerful models if available
+                model="pierreguillou/gpt2-small-portuguese",
+                max_length=512,
+                truncation=True
+            )
+            print("Modelo PT-BR carregado com sucesso!")
+        except:
+            # Fallback para o modelo padrão
+            print("Modelo PT-BR não disponível, usando modelo padrão.")
+            self.generator = pipeline(
+                "text-generation",
+                model="gpt2",
                 max_length=512
             )
-            print("Text generation model loaded successfully!")
-        except Exception as e:
-            print(f"Error loading text generation model: {str(e)}")
-            print("Falling back to rule-based response generation")
-            self.generator = None
     
     def answer_query(self, query, include_context=False, include_sources=True):
         """Answer a campaign related query using RAG.

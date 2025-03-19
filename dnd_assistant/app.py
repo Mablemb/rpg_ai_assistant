@@ -6,6 +6,8 @@ Main application that combines retrieval and explanation capabilities.
 import os
 import sys
 import time
+import traceback  # Para capturar detalhes do erro
+
 # Tenta importar readline (Linux/MacOS) ou pyreadline (Windows)
 try:
     import readline  # Para Linux/MacOS
@@ -59,40 +61,71 @@ class CampaignAssistantApp:
         Returns:
             Response dictionary with answer and explanations
         """
-        print("\nProcessando consulta:", query)
-        
-        # Step 1: Retrieve relevant chunks
-        start_time = time.time()
-        retrieved_chunks = self.retriever.retrieve(query, return_scores=True)
-        retrieval_time = time.time() - start_time
-        
-        print(f"Recuperados {len(retrieved_chunks)} trechos relevantes em {retrieval_time:.2f}s")
-        
-        # Step 2: Generate answer
-        start_time = time.time()
-        response = self.assistant.answer_query(query, include_context=True, include_sources=True)
-        generation_time = time.time() - start_time
-        
-        print(f"Resposta gerada em {generation_time:.2f}s")
-        
-        # Step 3: Generate explanations if requested
-        if explain:
-            print("Gerando explicações...")
+        try:
+            print("\nProcessando consulta:", query)
             
+            # Step 1: Retrieve relevant chunks
             start_time = time.time()
-            explanation = create_simple_explanation(
-                query, 
-                retrieved_chunks, 
-                response["answer"]
-            )
-            explanation_time = time.time() - start_time
+            retrieved_chunks = self.retriever.retrieve(query, return_scores=True)
+            retrieval_time = time.time() - start_time
             
-            print(f"Explicações geradas em {explanation_time:.2f}s")
+            print(f"Recuperados {len(retrieved_chunks)} trechos relevantes em {retrieval_time:.2f}s")
             
-            # Add explanations to response
-            response["explanations"] = explanation
-        
-        return response
+            # Verificar se algum trecho foi recuperado
+            if not retrieved_chunks:
+                return {
+                    "answer": "Não consegui encontrar informações relevantes para responder sua pergunta. Por favor, tente formular de outra maneira ou pergunte sobre outro tópico.",
+                    "sources": [],
+                    "context": []
+                }
+            
+            # Step 2: Generate answer
+            start_time = time.time()
+            response = self.assistant.answer_query(query, include_context=True, include_sources=True)
+            generation_time = time.time() - start_time
+            
+            print(f"Resposta gerada em {generation_time:.2f}s")
+            
+            # Verificar se uma resposta foi gerada
+            if not response or "answer" not in response or not response["answer"]:
+                return {
+                    "answer": "Encontrei informações relacionadas, mas não consegui gerar uma resposta coerente. Aqui está um trecho relevante:\n\n" + retrieved_chunks[0]["text"][:200],
+                    "sources": [chunk["source"] for chunk in retrieved_chunks if "source" in chunk],
+                    "context": [chunk["text"] for chunk in retrieved_chunks]
+                }
+            
+            # Step 3: Generate explanations if requested
+            if explain:
+                try:
+                    print("Gerando explicações...")
+                    
+                    start_time = time.time()
+                    explanation = create_simple_explanation(query, retrieved_chunks, response["answer"])
+                    explanation_time = time.time() - start_time
+                    
+                    print(f"Explicações geradas em {explanation_time:.2f}s")
+                    
+                    # Add explanations to response
+                    response["explanations"] = explanation
+                except Exception as e:
+                    print(f"Erro ao gerar explicações: {str(e)}")
+                    # Se falhar na geração de explicações, continue sem elas
+                    response["explanations"] = {
+                        "error": f"Não foi possível gerar explicações: {str(e)}"
+                    }
+            
+            return response
+            
+        except Exception as e:
+            print(f"Erro ao processar consulta: {str(e)}")
+            traceback.print_exc()  # Imprime o traceback completo para depuração
+            
+            # Retornar uma resposta de erro formatada
+            return {
+                "answer": f"Desculpe, ocorreu um erro ao processar sua consulta: {str(e)}",
+                "error": str(e),
+                "traceback": traceback.format_exc()
+            }
     
     def run_interactive(self):
         """Run the assistant in interactive command-line mode."""
@@ -127,32 +160,43 @@ class CampaignAssistantApp:
                 # Process the query
                 if not query:
                     continue
+                
+                try:   
+                    response = self.process_query(query, explain)
                     
-                response = self.process_query(query, explain)
-                
-                # Display the answer
-                print("\n📜 RESPOSTA:")
-                print("-" * 60)
-                print(response["answer"])
-                print("-" * 60)
-                
-                # Display sources
-                if "sources" in response and response["sources"]:
-                    print("\n📚 FONTES:")
-                    for source in response["sources"]:
-                        print(f"- {source}")
-                
-                # Show explanations if enabled
-                if explain and "explanations" in response:
-                    self.display_explanations(response["explanations"])
+                    # Display the answer
+                    print("\n📜 RESPOSTA:")
+                    print("-" * 60)
+                    print(response.get("answer", "Erro: Nenhuma resposta gerada"))
+                    print("-" * 60)
                     
-                    # Inform about visualizations
-                    if "visualizations" in response["explanations"]:
-                        print("\n🖼️ VISUALIZAÇÕES:")
-                        print(f"As visualizações foram salvas no diretório '{self.output_dir}'.")
-                        for vis_type, path in response["explanations"]["visualizations"].items():
-                            if path:
-                                print(f"- {vis_type}: {path}")
+                    # Display error if present
+                    if "error" in response:
+                        print("\n❌ ERRO:")
+                        print(f"Ocorreu um erro: {response['error']}")
+                        continue
+                    
+                    # Display sources
+                    if "sources" in response and response["sources"]:
+                        print("\n📚 FONTES:")
+                        for source in response["sources"]:
+                            print(f"- {source}")
+                    
+                    # Show explanations if enabled
+                    if explain and "explanations" in response:
+                        self.display_explanations(response["explanations"])
+                        
+                        # Inform about visualizations
+                        if "visualizations" in response["explanations"]:
+                            print("\n🖼️ VISUALIZAÇÕES:")
+                            print(f"As visualizações foram salvas no diretório '{self.output_dir}'.")
+                            for vis_type, path in response["explanations"]["visualizations"].items():
+                                if path:
+                                    print(f"- {vis_type}: {path}")
+                
+                except Exception as e:
+                    print(f"\nErro ao exibir resultados: {str(e)}")
+                    traceback.print_exc()
                 
             except KeyboardInterrupt:
                 print("\n\nSaindo do Assistente de Campanha D&D. Até mais!")
@@ -160,6 +204,7 @@ class CampaignAssistantApp:
                 
             except Exception as e:
                 print(f"\nErro: {str(e)}")
+                traceback.print_exc()
                 print("Tente outra pergunta ou digite 'exit' para sair.")
     
     def display_explanations(self, explanations):
@@ -168,41 +213,49 @@ class CampaignAssistantApp:
         Args:
             explanations: Dictionary with explanation data
         """
+        # Verificar se há erro nas explicações
+        if "error" in explanations:
+            print(f"\n❌ Erro nas explicações: {explanations['error']}")
+            return
+            
         print("\n🔍 EXPLICAÇÕES:")
         print("-" * 60)
         
-        # Retrieval explanation
-        if "retrieval" in explanations:
-            retrieval = explanations["retrieval"]
-            print("\n🔎 Por que esses trechos foram recuperados:")
-            print(retrieval.get("explanation", "Nenhuma explicação disponível."))
+        try:
+            # Retrieval explanation
+            if "retrieval" in explanations:
+                retrieval = explanations["retrieval"]
+                print("\n🔎 Por que esses trechos foram recuperados:")
+                print(retrieval.get("explanation", "Nenhuma explicação disponível."))
+                
+                if "important_query_terms" in retrieval and retrieval["important_query_terms"]:
+                    print("\nTermos importantes na sua consulta:")
+                    print(", ".join(retrieval["important_query_terms"]))
             
-            if "important_query_terms" in retrieval and retrieval["important_query_terms"]:
-                print("\nTermos importantes na sua consulta:")
-                print(", ".join(retrieval["important_query_terms"]))
-        
-        # Show a sample of highlighted chunks
-        if "highlighted_chunks" in explanations and explanations["highlighted_chunks"]:
-            print("\n📑 Exemplo de trecho destacado:")
-            chunk = explanations["highlighted_chunks"][0]
-            print(f"De {chunk['source']}:")
-            # Display first 200 characters of the highlighted text
-            highlight_sample = chunk["text"][:200] + "..." if len(chunk["text"]) > 200 else chunk["text"]
-            print(highlight_sample)
-            print("(** marca os termos correspondentes)")
-        
-        # Generation explanations
-        if "generation" in explanations and "connections" in explanations["generation"]:
-            print("\n🧠 Como a resposta foi construída:")
-            print(explanations["generation"].get("explanation", ""))
+            # Show a sample of highlighted chunks
+            if "highlighted_chunks" in explanations and explanations["highlighted_chunks"]:
+                print("\n📑 Exemplo de trecho destacado:")
+                chunk = explanations["highlighted_chunks"][0]
+                print(f"De {chunk['source']}:")
+                # Display first 200 characters of the highlighted text
+                highlight_sample = chunk["text"][:200] + "..." if len(chunk["text"]) > 200 else chunk["text"]
+                print(highlight_sample)
+                print("(** marca os termos correspondentes)")
             
-            connections = explanations["generation"]["connections"]
-            if connections:
-                print("\nConexões principais entre fontes e resposta:")
-                for i, conn in enumerate(connections[:3]):  # Show top 3
-                    print(f"\n{i+1}. Resposta diz: \"{conn['answer_text']}\"")
-                    print(f"   Baseado em: \"{conn['context_sentence']}\"")
-                    print(f"   De: {conn['source']}")
+            # Generation explanations
+            if "generation" in explanations and "connections" in explanations["generation"]:
+                print("\n🧠 Como a resposta foi construída:")
+                print(explanations["generation"].get("explanation", ""))
+                
+                connections = explanations["generation"]["connections"]
+                if connections:
+                    print("\nConexões principais entre fontes e resposta:")
+                    for i, conn in enumerate(connections[:3]):  # Show top 3
+                        print(f"\n{i+1}. Resposta diz: \"{conn['answer_text']}\"")
+                        print(f"   Baseado em: \"{conn['context_sentence']}\"")
+                        print(f"   De: {conn['source']}")
+        except Exception as e:
+            print(f"\nErro ao exibir explicações: {str(e)}")
     
     def show_help(self):
         """Display help information."""

@@ -1,9 +1,27 @@
-Reino de Eldoria: Um reino outrora próspero, agora em reconstrução após a Guerra das Sombras. É governado pela Rainha Elara, conhecida por sua sabedoria e justiça. A capital é Valoria, uma cidade cercada por muralhas e com um grande castelo central.
+{Nome - Cemitério de Ferro:
+História - Ao noroeste do mundo conhecido, onde o oceano se ergue em fúria contra rochedos negros, jaz o Cemitério de Ferro, um arquipélago amaldiçoado que um dia foi a coroa de fogo do mundo. Outrora, essa terra era dominada por um colossal vulcão, a Forja do Dragão, lar dos maiores dragões vermelhos que já rasgaram os céus com suas asas flamejantes.
+Por séculos, essas bestas ancestrais governaram a região, seus rugidos ecoando como trovões e suas chamas moldando a terra em rios de magma. No entanto, sua soberania foi desafiada quando um exército de gigantes, sedentos por vingança e liderados por um titã profano, marchou sobre o vulcão. A guerra que se seguiu ficou conhecida como A Ruína Ígnea, um conflito tão devastador que reescreveu a geografia do mundo.
+Após anos de batalhas titânicas, os gigantes desferiram o golpe final: com uma magia proibida, implodiram o vulcão por dentro, afundando suas câmaras ígneas e aniquilando os últimos dragões. Mas as grandes feras não partiram sem sua última vingança. Em seus momentos finais, os dragões conjuraram uma maldição terrível, um feitiço que transformou as cinzas de seu lar em um atol desolado, onde a própria vida se recusa a prosperar.
+Agora, o Cemitério de Ferro é um campo de ruínas e ilhas flutuantes de rocha negra, envolto por névoas tóxicas e tempestades incessantes. A maldição dracônica impregnou cada grão de areia, corroendo carne e alma daqueles que ousam desembarcar. Dizem que os espíritos dos dragões caídos ainda rondam o local, suas presenças ardendo na bruma como sombras de fogo e fúria.
+Os poucos que sobreviveram a uma visita ao atol contam histórias de estruturas de ferro retorcidas, como garras emergindo da terra, e de sussurros na tempestade que prometem poder em troca de sacrifícios. Alguns dizem que o coração do vulcão ainda pulsa no fundo do oceano, aguardando um descendente digno para despertar sua fúria.
+Mas seja verdade ou lenda, uma coisa é certa: o Cemitério de Ferro não perdoa intrusos.}
 
-Floresta Sombria: Uma floresta densa e misteriosa, lar de criaturas mágicas e perigosas. Dizem que no coração da floresta reside um antigo espírito guardião. É evitada pela maioria dos viajantes, exceto os mais corajosos (ou tolos).
+{Nome - Arquipélago do Aço
+História - No extremo norte, onde os mares gelados encontram rios de lava incandescente, ergue-se o Arquipélago do Aço, um domínio forjado pelo fogo, moldado pela guerra e temperado pela resiliência. No coração desse território, fumegante e implacável, repousa Igno Silathsel, o titânico vulcão que já foi o trono dos Gigantes de Fogo.
 
-Montanhas Uivantes: Uma cadeia de montanhas altas e escarpadas, onde o vento uiva constantemente. Habitada por tribos de bárbaros e criaturas resistentes ao frio, como yetis. Há rumores de minas abandonadas com riquezas esquecidas.
+Nos tempos antigos, os colossais senhores flamejantes reinavam soberanos sobre as ilhas, extraindo metais profundos das entranhas da terra e moldando armas dignas de deuses. Mas sua glória encontrou um desafio quando os Dragões Vermelhos do Cemitério de Ferro decidiram expandir seus domínios. Assim começou a Guerra das Chamas Eternas, um conflito que incendiou os céus e fez tremer a crosta do mundo.
 
-Costa Esmeralda: Uma região costeira com praias de areia branca, águas cristalinas e recifes de coral. Lar de comunidades pesqueiras e piratas ocasionais. O Porto Âmbar é o principal centro comercial da região.
+Os Gigantes de Fogo saíram vitoriosos, mas a um preço terrível. Suas forças foram dizimadas, seus números reduzidos a meros espectros do que já haviam sido. Foi nesse momento de fraqueza que surgiu uma nova ameaça: os Anões das Profundezas, guerreiros incansáveis e mestres da guerra de cerco, que há séculos cobiçavam as forjas lendárias do arquipélago.
 
-Deserto das Almas Perdidas: Uma vasta extensão de areia e rochas, onde o calor é implacável. Diz a lenda que é habitado por espíritos inquietos e criaturas que se adaptaram às condições extremas. Poucos se aventuram neste deserto.
+Na escuridão da noite, os martelos anões ressoaram como sinos de condenação. Durante a Guerra das Cinzas, os antigos salões dos gigantes foram tomados, suas fortalezas conquistadas e suas chamas dominadas por um novo povo. No fim da batalha, os anões ergueram seus estandartes sobre Igno Silathsel e se proclamaram os novos mestres do vulcão.
+
+Os Clãs Anões
+Hoje, o Arquipélago do Aço é governado por cinco grandes clãs anões, cada um estabelecido em uma das ilhas principais, com especializações que mantêm o arquipélago próspero:
+
+Clã Escudo de Aço – Os guardiões do arquipélago e mestres na fabricação de armaduras e escudos indestrutíveis. Seu aço temperado resiste até mesmo ao fogo dos dragões.
+Clã Machado de Cristal – Especialistas em lapidação de gemas e fabricação de armas incrivelmente afiadas. Dizem que seus machados podem cortar até mesmo a alma de um inimigo.
+Clã Ferro e Fogo – Os senhores das forjas, responsáveis pela fundição e pela criação das lendárias ligas metálicas do arquipélago. Suas forjas nunca se apagam.
+Clã Arpão de Ouro – Mestres da navegação e do comércio marítimo, responsáveis por levar as riquezas do arquipélago ao restante do mundo. Seus navios são reforçados com aço, tornando-os quase inafundáveis.
+Clã Pedra Polida – Os arquitetos e construtores das fortalezas anãs. Eles dominam a engenharia e a escultura, transformando as ilhas em bastiões inexpugnáveis.
+Apesar de sua unidade como povo, os clãs frequentemente entram em disputas internas por poder, influência e recursos, garantindo que o arquipélago seja tão vibrante em conflitos quanto em sua grandiosa produção. Entretanto, todos sabem que a ira dos Gigantes de Fogo pode um dia retornar. E quando isso acontecer, o metal anão será testado mais uma vez no fogo da guerra.}
+

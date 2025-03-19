@@ -7,3 +7,40 @@ Anel do Teletransporte: Um anel que permite ao usuário se teletransportar para 
 Botas da Velocidade: Um par de botas que permite ao usuário correr a velocidades incríveis.
 
 Poção da Cura: Uma poção que cura instantaneamente ferimentos e doenças. Tem um gosto amargo, mas é muito eficaz.
+
+Coração de Gólgota
+Tipo: Artefato | Amuleto
+Região: Cemitério de Ferro
+Descrição: Uma joia vermelha como magma cristalizado, pulsando com uma luz interna, como se ainda estivesse viva. Dizem que quem a segura pode ouvir o sussurro das almas dos dragões caídos.
+
+Lore:
+Quando os dragões vermelhos foram derrotados pelos gigantes de fogo, seus últimos rugidos ecoaram pelo céu como maldições ardentes. No momento final da batalha, a essência de um dragão ancião chamado Gólgota, o Imortal foi aprisionada em uma única lágrima flamejante – um cristal rubro, nascido da dor e do ódio. Esse artefato, agora conhecido como Coração de Gólgota, foi encontrado por necromantes e usado para canalizar magia destrutiva.
+
+Mas há um preço. O portador do Coração sente constantemente o peso das almas condenadas e, caso não resista à sua influência, pode ser consumido pelo espírito vingativo do dragão.
+
+Efeitos Mágicos:
+Sopro Dracônico (3x por dia): O usuário pode expelir um cone de chamas negras que ignora resistências a fogo e reduz temporariamente a armadura das vítimas.
+Lamento dos Caídos: À noite, o portador pode conversar com espíritos dos dragões mortos, obtendo conhecimento ou segredos ocultos.
+Fardo da Maldição: Toda vez que o Coração é usado, há uma chance de o usuário perder controle por um turno, agindo de forma violenta e destrutiva.
+Ascensão Dracônica: Se alguém usar o Coração por muito tempo, sua alma pode ser substituída pela de Gólgota, tornando-se um novo dragão morto-vivo.
+Gancho de Aventura:
+Dizem que o Coração de Gólgota foi roubado da cripta onde estava selado. Se cair nas mãos erradas, pode despertar um novo exército de mortos-vivos dracônicos. Mas destruí-lo pode exigir um sacrifício terrível…
+
+O Martelo do Tectonarca
+Tipo: Arma Mágica | Martelo de Guerra
+Região: Arquipélago do Aço
+Descrição: Um martelo colossal, forjado de ferro negro e adornado com runas rúnicas anciãs. Ele vibra com um poder sísmico e pode criar pequenos tremores a cada impacto.
+
+Lore:
+Antes da guerra entre os dragões vermelhos e os gigantes de fogo, havia um único ser que podia desafiar ambos: Tectonarca, o Senhor das Rochas, um gigante lendário que caminhava entre os vulcões e moldava a terra com suas mãos. Seu martelo, forjado na fundição do próprio Igno Silathsel, era uma arma tão poderosa que, com um único golpe, podia remodelar montanhas e afundar ilhas inteiras.
+
+Quando os anões tomaram o Arquipélago do Aço, encontraram os restos de Tectonarca e seu martelo, enterrado sob camadas de rocha fundida. Desde então, gerações de ferreiros tentaram dominá-lo, mas nenhum anão foi digno o suficiente para empunhá-lo completamente. Aqueles que tentaram sem preparação tiveram seus ossos esmagados pelo próprio peso da arma.
+
+Efeitos Mágicos:
+Impacto Sísmico: Ao atingir o solo, o martelo cria uma onda de choque que derruba inimigos próximos e pode rachar o terreno.
+Chamado da Terra: O usuário pode invocar pilares de pedra do chão para bloquear ataques ou criar passagens temporárias.
+Força Colossal: Apenas aqueles com força sobre-humana podem segurá-lo sem serem esmagados por seu próprio peso.
+Despertar Ancião: Se empunhado por um verdadeiro herdeiro dos gigantes, o martelo pode liberar todo o seu poder, permitindo ao portador controlar o magma do vulcão.
+Gancho de Aventura:
+Os anões sussurram sobre uma profecia: o dia em que um guerreiro digno despertará o verdadeiro poder do Martelo do Tectonarca e restaurará a glória dos gigantes. Mas esse dia pode não estar tão distante…
+

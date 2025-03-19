@@ -30,7 +30,7 @@ def create_and_save_embeddings(chunks, model_name="all-MiniLM-L6-v2", output_dir
     
     # Load model
     print(f"Loading embedding model: {model_name}")
-    model = SentenceTransformer(model_name)
+    model = SentenceTransformer("neuralmind/bert-base-portuguese-cased")
     
     # Extract texts for embedding
     texts = [chunk["text"] for chunk in chunks]
